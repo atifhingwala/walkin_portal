@@ -1,0 +1,277 @@
+@import "../../variables.scss";
+
+.cards-container{
+    margin: 92px 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+}
+
+.card{
+    background-color: #FFFFFF;
+    height: fit-content;
+    padding: 16px;
+    box-shadow: 0px 4px 6px #0000003D;
+
+    @media screen and (max-width: 400px){
+        height: fit-content;
+    }
+
+    @media screen and (min-width: 1050px){
+        width: 976px;
+        margin: auto;
+    }
+    .card-text{
+        margin:unset;
+        color: #1F7A54;
+        font-weight:bold;
+        font-size: 23px;
+        margin-bottom: 16px;
+        p{
+            margin: unset;
+        }
+    }
+    .btn{
+        width: 90px;
+        height: 28px;
+        border-radius: 2px;
+        box-shadow: 0px 3px 5px #0000003D;
+        border: none;
+        background-color: #3FD28B;
+        color: #1F2834;
+        cursor: pointer;
+        font-weight: bold;
+        float:right;
+    }
+    .date-time{
+        color: #666666;
+        font-size: 14px;
+        margin-bottom: 20px;
+        p{
+            
+            margin-bottom: 8px;
+        }
+        
+        .date{
+            
+            color: #222222;
+            font-weight: 600;
+        }
+
+        
+        .city{
+            margin-left: 8px;
+        }
+        .separator{
+            margin-left: 18px;
+            margin-right: 18px;
+        }
+        @media screen and (max-width: 400px){
+            .separator{
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+        }
+    }
+    .job-roles{
+        color: #666666;
+        font-size: 14px;
+        margin: 10px 0px;
+        margin-bottom: 30px;
+        p{
+            margin-bottom: 10px;
+        }
+    
+        .job-role-img{
+            border: solid 1px black;
+            border-radius: 50%;
+            padding: 2px;
+            img{
+                background-size: 5px;
+                background-position: center;
+            }
+        }
+        .job-role-text{
+            margin-left: 10px;
+            color: $text-link-color;
+            font-weight: 600;
+        }
+        .roles{
+            display:flex;
+            margin-right: 20px;
+        }
+
+        .flexbox{
+            display: flex;
+        }
+        
+
+        .separator{
+            margin-left: 18px;
+            margin-right: 18px;
+            display: none;
+        }
+
+        @media screen and (max-width: 400px){
+            .flexbox{
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+            .separator{
+                display: none;
+                
+            }
+            // .roles div{
+            //     margin-bottom: 15px;
+            // }
+        }
+        
+        
+    }
+    .button-detail{
+        
+        display: flex;
+        justify-content: center;
+        button{
+            padding: 5px 16px;
+            border: none;
+            background-color: #3FD28B;
+            border-radius: 2px;
+            box-shadow: 0px 3px 5px #0000003D;
+            width: 168px;
+            height: 28px;
+            color: #25313F;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+
+    .pre-requisite{
+        background-color: #DBEFFF;
+        height: 40px;
+        margin: -16px;
+        margin-bottom: 1px;
+        p{
+            padding: 10px 16px;
+            font-weight: bold;
+        }
+        .expand-svg1{
+            float: right;
+            cursor: pointer;
+        }
+    }
+    
+    
+}
+.time-slot-preference{
+        
+    .title{
+        margin: unset;
+        font-weight: bold;
+        margin-bottom: 24px;
+    }
+    .time-slot{
+        color: #666666;
+        font-size: 14px;
+        margin-bottom: 20px;
+        p{
+            margin: unset;
+        }
+        .radio{
+            color: #222222;
+            font-size: 16px;
+            display: block;
+            margin-top: 18px;
+            font-weight: bold;
+            margin-left: -4px;
+        }
+        
+        input[type="radio"]{
+            margin-right: 8px;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1F7A54;
+            border-radius: 50%;
+            cursor: pointer;
+            /* margin-top: 2px; */
+            vertical-align: middle;
+            margin-bottom: 3px;
+            
+            
+        }
+        
+        input[type="radio"]:checked{
+            background-image: url(../../../assets/quantum_screen_assets/icons/icons8-unchecked-radio-button-24.png);
+            background-position: center;
+        }
+    }
+    .preference{
+        color: #666666;
+        font-size: 14px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        p{
+            margin: unset;
+        }
+        .checkbox{
+            color: #222222;
+            font-size: 16px;
+            display: block;
+            margin-top: 18px;
+            font-weight: bold;
+            margin-left: -4px;
+        }
+        input[type="checkbox"]{
+            margin-right: 8px;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1F7A54;
+            cursor: pointer;
+            /* margin-top: 2px; */
+            vertical-align: middle;
+            margin-bottom: 3px;
+            
+            
+        }
+        
+        input[type="checkbox"]:checked{
+            background-image: url(../../../assets/quantum_screen_assets/icons/checkbox-checked.svg);
+            background-position: center;
+        }
+    }
+    .resume{
+        display: flex;
+        margin-top: 15px;
+        img{
+            margin-right: 5px;
+            color: $text-link-color;
+            cursor: pointer;
+        }
+        p{
+            color: $text-link-color;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+
+    
+}
+.role-dropdown{
+    
+    background-color: #DBEFFF;
+    height: 56px;
+    margin: -16px;
+    margin-bottom: 1px;
+    p{
+        margin: unset;
+        padding: 20px 16px;
+        font-weight: bold;
+    }
+    .expand-svg2,.expand-svg3,.expand-svg4{
+        float: right;
+        cursor: pointer;
+    }
+}

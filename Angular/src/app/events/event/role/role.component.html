@@ -1,0 +1,49 @@
+<div *ngFor="let e of events.table; let i=index">
+    <div >   
+       
+        <div class="card">
+            <div class="role-dropdown" >
+                <p>{{events.table[i].role_name}}
+                    <img (click)="hideElement(events.table[i].role_id)" id="p{{events.table[i].role_id}}"  class="expand-svg2" src="../../assets/icons_new/expand_more_black_24dp.svg" alt="">
+                </p>
+            </div>
+
+
+            <div class="toggle" id="{{events.table[i].role_id}}">
+                <div class="space-element"></div>
+                <div class="general instruction">
+                    <p class="instruction-text">Gross Compensation Package :</p>
+                    <p>Rs. {{events.table[i].role_package}} lpa</p>    
+                </div>
+                <hr>
+                <div class="exam instruction">
+                    <p class="instruction-text">Role Description :</p>
+                    <p>- Generate highly interactive and innovative instructional strategies for e-learning solutions <br>
+                        - Develop course structure and learning specifications addressing the requirements of the target audience <br>
+                        - Construct appropriate testing strategies to ensure learners' understanding and performance <br>
+                        - Address usability issues - Keep abreast of new trends in e-learning <br>
+                        - Ensure that the instructional strategies are as per global standards <br>
+                        - Prepare instructional design checklists and guidelines <br>
+                        - Check for quality assurance</p>
+                </div>
+                <hr>
+                <div class="min-requirement instruction">
+                    <p class="instruction-text">Requirements :<br>
+                    <p>- Experience in creating instructional plans and course maps. <br>
+                        - Experience in the use of media like graphics, illustrations, photographs, audio, video, animations, and simulations in instruction <br>
+                        - Awareness of different instructional design models and familiarity with instructional and learning theories <br>
+                        - Awareness of latest trends in e-learning and instructional design <br>
+                        - Strong client consulting/interfacing skills. <br>
+                        - Ability to guide clients to focus on specific objectives and teaching points <br>
+                        - Strong meeting facilitation, presentation and interpersonal skills <br>
+                        - A thorough understanding of the web as an instructional medium <br>
+                        - Post graduate degree in Education, Instructional Design, Mass Communication or Journalism</p>
+                </div>
+
+            </div>
+            
+        </div>
+        
+        
+    </div>
+</div>

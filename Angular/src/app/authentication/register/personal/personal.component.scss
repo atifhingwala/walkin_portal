@@ -1,0 +1,111 @@
+@import "../../../events/events.component.scss";
+@import "../../../mixin.scss";
+@import "../../../variables.scss";
+
+
+    .card{
+        @extend .card;
+        margin-top: 24px;
+        padding: 24px;
+        height: fit-content;
+        margin-bottom: 50px;
+        border-radius: 2px;
+        .image{
+            float: right;
+            .img{
+                display: flex;
+                justify-content: center;
+            }
+            img{
+                width: 130px;
+                height: 145px;
+                margin:0px auto;    
+            }
+            p:nth-child(2){
+                color: $text-link-color;
+                font-size: 14px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            p:nth-child(3){
+                font-size: 12px;
+                color: #666666;
+                text-align: center;
+                
+            }
+        }
+        .input-field{
+            height: fit-content;
+            width: 450px;
+            // border: solid 2px red;
+            margin-bottom: 45px;
+            
+            input.ng-invalid.ng-touched{
+                border: solid 1px red;
+            }
+            
+
+            label:first-child{
+                font-size: 14px;
+                color: #666666;
+                
+            }
+            input[type="text"], input[type="email"], input[type="password"]{
+                border: none;
+                border-bottom: solid 1px #000000;
+                //opacity: 38%;
+                width: 480px;
+                margin-top: 10px;
+                font-weight: bold;
+                
+                font-size: 17px;
+                &:nth-child(4){
+                    width: 134px;
+                }
+                
+            }
+            input[type="checkbox"]{
+                @extend .input-checkbox;
+            }
+            input[type="checkbox"]:checked{
+                @extend .input-checkbox-checked;
+                background-image: url(../../../../assets/quantum_screen_assets/icons/checkbox-checked.svg)
+            }
+            .checkbox{
+                @extend .checkbox;
+                margin-left: 1px;
+                
+            }
+        
+        }
+        .upload{
+            @extend .resume;
+            padding-top: 15px;
+            margin-bottom: 40px;
+        }
+        h3, h5{
+            color: red;
+            
+        }
+        
+        
+    }
+
+
+.next-btn{
+    
+    // width:90px;
+    // height: 28px;
+    // background-color: $primary-button-color;
+    // color: #1F2834;
+    // border: none;
+    // font-size: 14px;
+    // font-weight: bold;
+    // margin: 32px auto;
+    // cursor: pointer;
+    // box-shadow: 0px 3px 5px #0000003D;
+    @extend .btn;
+    display: block;
+    margin: 32px auto;
+}
+

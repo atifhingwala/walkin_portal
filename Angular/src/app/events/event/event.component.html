@@ -1,0 +1,72 @@
+<div class="cards-container"  *ngFor="let e of events.table; let i=index">
+    <div class="card">
+        <button class="btn" (click)="onApply()">Apply</button>
+        <div class="card-text" >
+            <p>{{events.table[i].walkin_name}}</p>
+        </div>
+        <div class="date-time">
+            <p>Date & Time:</p>
+            <span class="date">{{events.table1[i].date}}</span>
+            <span class="separator">|</span>
+            <span class="location"><img src="../../assets/icons/Location icon.svg" alt="location-icon">
+                {{events.table2[i].walkin_city}}
+            </span>
+        </div>
+        
+        <hr>
+        <div class="job-roles">
+            <p>Job Roles:</p>
+            <div class="flexbox">
+                <ng-container *ngFor="let p of events.table3; let q=index">
+                   <div  class="roles" >    
+                            <div class="job-role-img" ><img src="{{events.table3[q].role_img_src}}" alt=""></div>
+                            <div class="job-role-text" >{{events.table3[q].role_name}}</div>
+                            <span class="separator">|</span>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        
+        
+        <div > 
+            <app-pre-requisite [event_id]="id"></app-pre-requisite>
+        </div>
+    </div>    
+    <form [formGroup]="form" (ngSubmit)="onApply()">
+        <div class="card time-slot-preference" >
+            <p class="title">Time Slots & Preferences</p>
+            <div class="time-slot">
+                <p>Select a Time Slot:</p>
+                <div  *ngFor="let i of events.table4; let q=index">
+                    
+                        <label class="radio">
+                            <input type="radio" formControlName="slot_time" id="{{ q }}" value="{{ events.table4[q].slot_id }}">
+                            {{events.table4[q].slot_start_time}} to {{events.table4[q].slot_end_time}}
+                        </label>
+                    
+                </div>
+            </div>
+            <hr>
+            <div class="space-element"></div>
+            <div class="preference" formArrayName="preference">
+                <p>Select Your Preference :</p>
+                <div *ngFor="let pref of form.get('preference')['controls']; let q=index">
+                    
+                        <label class="checkbox">
+                            <input type="checkbox" [formControlName]="q">
+                            {{events.table3[q].role_name}}
+                        </label>
+                    
+                </div>
+            </div>
+            <hr>
+            <div class="resume">
+                <img src="../../assets/icons_new/Upload_black_24dp.svg" alt=""><p>UPLOAD UPDATED RESUME</p>
+            </div>
+        </div>
+    </form>
+    <div >
+        <app-role [roleId]="id"></app-role>
+    </div>
+</div>
+

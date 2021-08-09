@@ -1,0 +1,56 @@
+@import "../event.component.scss";
+
+.card{
+    @extend .card;
+    margin-bottom: 30px;
+    .role-dropdown{
+        @extend .role-dropdown;
+    }
+}
+
+hr{
+    margin:10px 0px;
+}
+// .toggle-designer{
+//     display:none;
+    
+// }
+
+.toggle{
+    display: none;
+    
+}
+
+.space-element{
+    margin-bottom: 16px;
+}
+
+
+
+.instruction{
+    color: #666666;
+    font-size: 14px;
+    // border: solid 1px red;
+    .instruction-text{
+        margin: unset;
+        margin-bottom: 14px;
+    }
+    p:not(:first-child){
+        color: #222222;
+        font-weight: bold;
+        font-size: 14px;
+        // margin-bottom: 1px;
+        margin-top: 0px;
+        line-height: 24px;
+    }
+    .round{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        p{
+            color: #222222;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 10px;
+        }
+    }
+}

@@ -1,0 +1,103 @@
+@import "../../events/event/event.component.scss";
+@import "../../mixin.scss";
+@import "../../variables.scss";
+@import "../../authentication/register/personal/personal.component.scss";
+
+.card{
+    @extend .card;
+    margin-top: 24px;
+    margin-bottom: 30px;
+    .role-dropdown{
+        @extend .role-dropdown;
+    }
+
+
+    .input-field{
+        @extend .input-field;
+        width: 180px;
+        // border: solid 2px red;
+        input[type= "text"]{
+            width: 180px;
+        }
+        
+    }
+
+    .input-field-mixin{
+        display: flex;
+        @extend .input-field;
+        
+        width: 452px;
+        .checkbox{
+            @extend .checkbox;
+        }
+        input[type="checkbox"]{
+            @extend .input-checkbox;
+        }
+        input[type="checkbox"]:checked{
+            @extend .input-checkbox-checked;
+            background-image: url(../../../assets/quantum_screen_assets/icons/checkbox-checked.svg);
+        }
+
+        .radio{
+            @extend .radio;
+            margin-right: 20px;
+        }
+        input[type="radio"]{
+            @extend .input-radio;
+
+        }
+        input[type="radio"]:checked{
+            @extend .input-radio-checked;
+            background-image: url(../../../assets/quantum_screen_assets/icons/icons8-unchecked-radio-button-24.png);
+        }
+    }
+    
+
+
+    .block1{
+        display: flex;
+        .input-field-1{
+            
+            height: fit-content;
+            // display: grid;
+            // grid-template-columns: 1fr 1fr;
+            width: 450px;
+            margin-right: 40px;
+            // border: solid 2px red;
+            margin-bottom: 45px;
+
+            input.ng-invalid.ng-touched{
+                border: solid 1px red;
+            }
+
+            label:first-child{
+                font-size: 14px;
+                color: #666666;
+                
+            }
+            input[type="text"], input[type="email"], input[type="password"]{
+                border: none;
+                border-bottom: solid 1px #000000;
+                //opacity: 38%;
+                width: 450px;
+                margin-top: 10px;
+                font-weight: bold;
+                
+                font-size: 17px;
+
+            }
+            input[type="checkbox"]{
+                @extend .checkbox;
+            }
+        }
+    }
+
+    .block2{
+        @extend .block1;
+        .input-field-2{
+            @extend .input-field-1;
+        }
+    }
+
+}
+

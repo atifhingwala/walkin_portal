@@ -1,0 +1,90 @@
+@import "./variables.scss";
+
+.input-checkbox{
+    margin-right: 8px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #1F7A54;
+    cursor: pointer;
+    /* margin-top: 2px; */
+    vertical-align: middle;
+    margin-bottom: 3px;
+    
+}
+
+.input-checkbox-checked{
+    // background-image: url(../../assets/quantum_screen_assets/icons/checkbox-checked.svg);
+    background-position: center;
+}
+
+.checkbox{
+    color: #222222;
+    font-size: 16px;
+    display: block;
+    margin-top: 18px;
+    font-weight: bold;
+    margin-left: -4px;
+    cursor: pointer;
+}
+
+.radio{
+    color: #222222;
+    font-size: 16px;
+    display: block;
+    margin-top: 18px;
+    font-weight: bold;
+    margin-left: -4px;
+}
+
+.input-radio{
+    margin-right: 8px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #1F7A54;
+    border-radius: 50%;
+    cursor: pointer;
+    /* margin-top: 2px; */
+    vertical-align: middle;
+    margin-bottom: 3px;
+    
+    
+}
+
+.input-radio-checked{
+    // background-image: url(../../assets/quantum_screen_assets/icons/icons8-unchecked-radio-button-24.png);
+    background-position: center;
+}
+
+
+
+
+
+.resume{
+    display: flex;
+    // margin-top: 15px;
+    img{
+        margin-right: 5px;
+        color: $text-link-color;
+        cursor: pointer;
+    }
+    p{
+        color: $text-link-color;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+.btn{
+    width: 90px;
+    height: 28px;
+    border-radius: 2px;
+    box-shadow: 0px 3px 5px #0000003D;
+    border: none;
+    background-color: #3FD28B;
+    color: #1F2834;
+    cursor: pointer;
+    font-weight: bold;
+}

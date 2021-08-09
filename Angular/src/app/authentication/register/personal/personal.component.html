@@ -1,0 +1,65 @@
+
+    <div>
+        <form [formGroup]="personalForm" (ngSubmit)="onSubmit()">
+            <div class="card">           
+                <div class="image">
+                    <div class="img"><img src="../../assets/icons_new/account_circle_black_24dp.svg" alt=""></div>
+                    <p>Upload Display Picture</p>
+                    <p>Max. image size: 5 MB</p>
+                </div>
+                <div class="input-field">
+                    <label for="f_name">First Name*</label><br>
+                    <input id="f_name" type="text" name="f_name" formControlName="f_name">
+                    <h5 *ngIf="!personalForm.get('f_name').valid && personalForm.get('f_name').touched ">Please enter the first name!</h5>
+                </div>
+                <div class="input-field">
+                    <label for="l_name">Last Name*</label><br>
+                    <input  type="text" id="l_name" name="l_name" formControlName="l_name">
+                    <h5 *ngIf="!personalForm.get('l_name').valid && personalForm.get('l_name').touched ">Please enter the last name!</h5>
+                </div>
+                <div class="input-field">
+                    <label for="email">Email*</label><br>
+                    <input type="text" value="Johnwatson@example.com" id="email" name="email" formControlName="email">
+                    <h5 *ngIf="!personalForm.get('email').valid && personalForm.get('email').touched ">Please enter the email!</h5>
+                </div>
+                <div class="input-field">
+                    <label for="password">Password*</label><br>
+                    <input type="password" id="password" name="password" placeholder="Enter Password" formControlName="password">
+                    <h5 *ngIf="!personalForm.get('password').valid && personalForm.get('password').touched ">Please enter the password!</h5>
+                </div>
+                <div class="input-field">
+                    <label for="phone_no">Phone Number*</label><br>
+                    <input type="text" id="phone_no" name="phone_no" value="+91 9876543210" formControlName="phone_no">
+                    <h5 *ngIf="!personalForm.get('phone_no').valid && personalForm.get('phone_no').touched ">Please enter the phone_no!</h5>
+                </div>
+                <div class="upload">
+                    <img src="../../assets/icons_new/Upload_black_24dp.svg" alt=""><p>UPLOAD RESUME</p>
+                </div>
+                <div class="input-field">
+                    <label for="url">Enter Portfolio URL (if any)</label><br>
+                    <input type="text" id="url" name="url" value="www.myportfolio.in" formControlName="portfolio">
+                </div>
+                <div class="input-field" formArrayName="preferred_job_role">
+                    <label for="checkbox">Preferred Job Roles*</label><br>
+                    <div *ngFor="let job of personalForm.get('preferred_job_role')['controls']; let i=index">
+                        
+                            <label class="checkbox">
+                                <input type="checkbox" name="checkbox" [formControlName]="i">
+                                <strong>{{checkbox[i]}}</strong>
+                            </label>
+                            
+                        
+                    </div>
+                    
+                </div>
+                <div class="input-field">
+                    <label for="referral">If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</label><br>
+                    <input id="referral" name="referral" type="text" formControlName="referral">
+                </div>
+                <label for="updates" class="checkbox input-field"><input id="updates" name="updates" type="checkbox" formControlName="job_updates">Send me job related updates via mail</label>
+                <h3 *ngIf="!personalForm.valid && personalForm.touched">Please fill all the fields properly</h3>
+            </div>
+            <button type="submit" class="next-btn">Next</button>
+        </form>
+    </div>
+

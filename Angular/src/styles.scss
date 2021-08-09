@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+$body-color: #EEEEEE;
+$container-color: #FFFFFF;
+$primary-button-color: #3FD28B;
+
+body{
+    background-color: $body-color;
+}
+
+@font-face {
+    font-family: Quicksand;
+    src: url('./assets/quantum_screen_assets/Quicksand_font/Quicksand-VariableFont_wght.ttf');
+}
+*{
+    font-family: Quicksand;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+

@@ -1,0 +1,76 @@
+<div *ngFor="let data of dropDownData">
+    <div class="card" *ngIf="data.type==dropType">
+        <div class="role-dropdown" >
+            <p>{{data.name}}
+                <img class="expand-svg2" src="../../assets/icons_new/expand_more_black_24dp.svg" alt="">
+            </p>
+        </div>
+<br>    <!--Educational Qualification-->
+        <div *ngIf="data.type==1">
+                <form [formGroup]="educationalForm" (ngSubmit)="onSubmit()">
+                    <div class="toggle" >
+                        <div class="input-field">
+                            <label > Aggregate Percentage*</label>
+                            <input type="text" value="65" formControlName="agg_percentage">
+                            <h5 *ngIf="!educationalForm.get('agg_percentage').valid && educationalForm.get('agg_percentage').touched ">Please enter the Aggregate Percentage!</h5>
+                        </div>
+                        <div class="input-field">
+                            <label > Year of Passing*</label>
+                            <input type="text" value="2020" formControlName="year_of_passing">
+                            <h5 *ngIf="!educationalForm.get('year_of_passing').valid && educationalForm.get('year_of_passing').touched ">Please enter the Year of Passing!</h5>
+                        </div>
+                        <div class="block1">
+                            <div class="input-field-1">
+                                <label > Qualification*</label>
+                                <input type="text" value="Bachelor in Technology (B.Tech)" formControlName="qualification">
+                                <h5 *ngIf="!educationalForm.get('qualification').valid && educationalForm.get('qualification').touched ">Please enter the qualification!</h5>
+                            </div>
+                            <div class="input-field-1">
+                                <label > Stream*</label>
+                                <input type="text" value="Information Technology" formControlName="stream">
+                                <h5 *ngIf="!educationalForm.get('stream').valid && educationalForm.get('stream').touched ">Please enter the stream!</h5>
+                            </div>
+                        </div>
+                        <div class="block2">
+                            <div class="input-field-2">
+                                <label > College*</label>
+                                <input type="text" value="Pune Institute of Technology (PIT)" formControlName="college">
+                                <h5 *ngIf="!educationalForm.get('college').valid && educationalForm.get('college').touched ">Please enter the college!</h5>
+                            </div>
+                            <div class="input-field-2">
+                                <label > If others, please enter your college name</label>
+                                <input type="text" formControlName="other_college">
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label >Where is your college located?*</label>
+                            <input type="text" value="Pune" formControlName="college_location">
+                            <h5 *ngIf="!educationalForm.get('college_location').valid && educationalForm.get('college_location').touched ">Please enter your collge location!</h5>
+                        </div>
+                    </div>
+                    <button class="next-btn" type="submit">Submit</button>
+                    <h3 *ngIf="!educationalForm.valid && educationalForm.touched">Please enter valid data!</h3>
+                </form>
+        </div>
+
+        <!--Professional Qualification-->
+        <div *ngIf="data.type==2">
+            <div class="toggle">
+                <div class="input-field">
+                    <label >Applicant Type*</label>
+                    <div class="input-field-mixin">
+                        <label for=""></label>
+                        <label class="radio"><input (click)="onClickRadio('fresher')" type="radio" name="Applicant-type">Fresher</label>
+                        <label class="radio"><input (click)="onClickRadio('experience')" type="radio" name="Applicant-type">Experienced</label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <ng-container [ngSwitch]="applicantType">
+                    <div *ngSwitchCase="'fresher'"><app-cards [applicantType]="'fresher'" ></app-cards></div>
+                    <div *ngSwitchCase="'experience'"><app-cards [applicantType]="'experience'" ></app-cards></div>
+                </ng-container>
+            </div>
+        </div>
+
+</div>

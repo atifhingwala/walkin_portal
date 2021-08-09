@@ -1,0 +1,205 @@
+<div *ngFor="let arr of formData; let i=index">
+    
+    
+    <div class="card" *ngIf="i==0">
+        <div class="image">
+            <div class="img"><img src="../../assets/icons_new/account_circle_black_24dp.svg" alt=""></div>
+            <p>Upload Display Picture</p>
+            <p>Max. image size: 5 MB</p>
+        </div>
+        <div class="input-field">
+            <label for="f_name">First Name*</label><br>
+            <strong>{{formData[i].value.f_name}}</strong>
+        </div>
+        <div class="input-field">
+            <label for="l_name">Last Name*</label><br>
+            <strong>{{formData[i].value.l_name}}</strong>
+        </div>
+        <div class="input-field">
+            <label for="email">Email*</label><br>
+            <strong>{{formData[i].value.email}}</strong>
+        </div>
+    
+        <div class="input-field">
+            <label for="phone_no">Phone Number*</label><br>
+            <strong>{{formData[i].value.phone_no}}</strong>
+        </div>
+        <!-- <div class="upload">
+            <img src="../../assets/icons_new/Upload_black_24dp.svg" alt=""><strong>UPLOAD RESUME</strong>
+        </div> -->
+        <div class="input-field">
+            <label for="url">Enter Portfolio URL (if any)*</label><br>
+            <strong>{{formData[i].value.portfolio}}</strong>
+        </div>
+        <div class="input-field">
+            <label for="checkbox">Preferred Job Roles*</label><br>
+            <div *ngFor="let f of formData[i].value.preferred_job_role; let q=index">
+                <strong *ngIf=" f==true && q==0">Instructional Engineer</strong>
+                <strong *ngIf=" f==true && q==1">Software Engineer</strong>
+                <strong *ngIf=" f==true && q==2">Software Quality Engineer</strong>
+            </div>
+    
+        </div>
+        <div class="block1">
+            <div class="input-field-1">
+                <label for="referral">If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</label><br>
+                <strong>{{formData[i].value.referral}}</strong>
+            </div>
+        </div>
+        <div class="block1">
+            <label for="updates" class="checkbox input-field"><input id="updates" name="updates" type="checkbox" >Send me job related updates via mail</label>
+        </div>
+    </div>
+    
+    
+    
+    <div class="card" *ngIf="i==1">
+        <div class="role-dropdown" >
+            <p>Educational Qualification</p>
+        </div>
+    
+        <div class="toggle" >
+            <div class="input-field">
+                <label > Aggregate Percentage*</label><br>
+                <strong>{{formData[i].value.agg_percentage}}</strong>
+            </div>
+            <div class="input-field">
+                <label > Year of Passing*</label><br>
+                <strong>{{formData[i].value.year_of_passing}}</strong>
+            </div>
+            <div class="block1">
+                <div class="input-field-1">
+                    <label > Qualification*</label><br>
+                    <strong>{{formData[i].value.qualification}}</strong>
+                </div>
+                <div class="input-field-1">
+                    <label > Stream*</label><br>
+                    <strong>{{formData[i].value.stream}}</strong>
+                </div>
+            </div>
+            <div class="block2">
+                <div class="input-field-2">
+                    <label > College*</label><br>
+                    <strong>{{formData[i].value.college}}</strong>
+                </div>
+                <div class="input-field-2">
+                    <label > If others, please enter your college name</label><br>
+                    <strong>{{formData[i].value.other_college}}</strong>
+                </div>
+            </div>
+            <div class="input-field">
+                <label >Where is your college located?*</label><br>
+                <strong>{{formData[i].value.college_location}}</strong>
+            </div>
+        </div>
+    </div>
+    
+    <div *ngIf="i==2">
+        <div class="card" >
+            <div class="role-dropdown" >
+                <p>Professional Qualification</p>
+            </div>
+            <div class="input-field">
+                <label >Applicant Type*</label>
+                <div class="input-field-mixin">
+                    <label for=""></label>
+                    <strong>{{applicantType}}</strong>
+                </div>
+            </div>
+        </div>
+        <div class="card" *ngIf="applicantType=='fresher' " >
+            <div class="input-field">
+                <label for="">Select All the Technologies you expertise in </label><br>
+                <div *ngFor="let f of formData[i].value.skills; let q=index">
+                    <strong *ngIf=" f==true && q==0">JavaScript</strong>
+                    <strong *ngIf=" f==true && q==1">Angular JS</strong>
+                    <strong *ngIf=" f==true && q==2">React</strong>
+                    <strong *ngIf=" f==true && q==3">Node JS</strong>
+                </div>
+                
+        
+            </div>
+            <div class="input-field">
+                <label for="">If Others Please Mention</label><br>
+                <strong>{{formData[i].value.other_skills}}</strong>
+            </div>
+            <div class="block1">
+                <div class="input-field-mixin">
+                    <label for="">Have You Appeared For Any Test By Zeus in the past 12 months?*</label><br>
+                    <strong></strong>
+                    <!-- <label class="radio"><input type="radio" name="AppearedExam">Yes</label>
+                    <label class="radio"><input type="radio" name="AppearedExam">No</label> -->
+                </div>
+            </div>
+        </div>
+        <div class="card" *ngIf="applicantType=='experience' ">
+            <div class="input-field">
+                <label>Years Of Experience*</label><br>
+                <strong>{{formData[i].value.years_of_exp}}</strong>
+            </div>
+            <div class="input-field">
+                <label for="">Current CTC* (In Rupees)</label><br>
+                <strong>{{formData[i].value.current_ctc}}</strong>
+            </div>
+            <div class="input-field">
+                <label for="">Expected CTC* (In Rupees)</label><br>
+                <strong>{{formData[i].value.expected_ctc}}</strong>
+            </div>
+            <div class="input-field-1">
+                <label for="">Select All the Technologies you expertise in *</label><br>
+                <div *ngFor="let f of formData[i].value.skills; let q=index">
+                    <strong *ngIf=" f==true && q==0">JavaScript</strong>
+                    <strong *ngIf=" f==true && q==1">Angular JS</strong>
+                    <strong *ngIf=" f==true && q==2">React</strong>
+                    <strong *ngIf=" f==true && q==3">Node JS</strong>
+                </div>
+                <br>
+            </div>
+            <div class="input-field">
+                <label for="">If Others Please Mention</label><br>
+                <strong>{{formData[i].value.other_skills}}</strong>
+            </div>
+            <div class="input-field-1" >
+                <label for="">Select All the Technologies you are familiar in *</label><br>
+                <div *ngFor="let f of formData[i].value.familiar_skills; let q=index">
+                    <strong *ngIf=" f==true && q==0">JavaScript</strong>
+                    <strong *ngIf=" f==true && q==1">Angular JS</strong>
+                    <strong *ngIf=" f==true && q==2">React</strong>
+                    <strong *ngIf=" f==true && q==3">Node JS</strong>
+                </div>
+                <br>
+            </div>
+            <div class="input-field">
+                <label for="">If Others Please Mention</label><br>
+                <strong>{{formData[i].value.other_familiar_skills}}</strong>
+            </div>
+            <div class="input-field-mixin" >
+                <label for="">Are you currently on Notice Period?*</label><br>
+                <strong></strong>
+            </div>
+            <div class="block1">
+                <div class="input-field-1">
+                    <label for="">If Yes, when will your notice period end?*</label><br>
+                    <strong></strong>
+                </div>
+                <div class="input-field-1">
+                    <label for="">How long is your notice period?* (Mention in months)</label><br>
+                    <strong></strong>
+                </div>
+            </div>
+            <div class="block1">
+                <div class="input-field-mixin">
+                    <label for="">Have You Appeared For Any Test By Zeus in the past 12 months?*</label><br>
+                    <strong></strong>
+                </div>
+            </div>
+            <div class="block1">
+                <div class="input-field-1">
+                    <label for="">If Yes, which role did you apply for?</label>
+                    <strong></strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

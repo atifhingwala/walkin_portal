@@ -1,0 +1,120 @@
+<div class="toggle" *ngIf="applicantType=='fresher'">
+        <form [formGroup]="fresherForm" (ngSubmit)="onSubmit()">
+            <div class="input-field-mixin" formArrayName="skills">
+                <label for="">Select All the Technologies you expertise in </label><br>
+                <div *ngFor="let arr of fresherForm.get('skills')['controls']; let i= index">
+                    <label class="checkbox">
+                        <input type="checkbox" name='checkbox' [formControlName]="i">
+                        <strong>{{skill[i]}}</strong>
+                    </label>
+                </div>
+                
+            </div>
+            <div class="input-field">
+                <label for="">If Others Please Mention</label>
+                <input type="text">
+            </div>
+            <div class="block1">
+                <div class="input-field-mixin">
+                    <label for="">Have You Appeared For Any Test By Zeus in the past 12 months?*</label><br>
+                    <div *ngFor="let t of test">
+                        <label class="radio">
+                            <input type="radio" [value]="t" formControlName="appeared_test">
+                            <strong>{{t}}</strong>
+                        </label>
+                    </div>
+                    <!-- <label class="radio"><input type="radio" name="AppearedExam">Yes</label>
+                    <label class="radio"><input type="radio" name="AppearedExam">No</label> -->
+                </div>
+            </div>
+            <button type="submit" class="next-btn">Next</button>
+        </form>
+</div>
+    
+
+    <div class="toggle" *ngIf="applicantType=='experience'">
+        <form [formGroup]="experienceForm" (ngSubmit)="onSubmit()">       
+            <div class="input-field">
+                <label>Years Of Experience*</label>
+                <input type="text" formControlName="years_of_exp">
+                <h5 *ngIf="!experienceForm.get('years_of_exp').valid && experienceForm.get('years_of_exp').touched ">Enter the years of experience!</h5>
+            </div>
+            <div class="input-field">
+                <label for="">Current CTC* (In Rupees)</label>
+                <input type="text" formControlName="current_ctc">
+                <h5 *ngIf="!experienceForm.get('current_ctc').valid && experienceForm.get('current_ctc').touched ">Enter the current ctc!</h5>
+            </div>
+            <div class="input-field">
+                <label for="">Expected CTC* (In Rupees)</label>
+                <input type="text" formControlName="expected_ctc">
+                <h5 *ngIf="!experienceForm.get('expected_ctc').valid && experienceForm.get('expected_ctc').touched ">Enter the expected ctc!</h5>
+            </div>
+            <div class="input-field-mixin" formGroupName="skills">
+                <label for="">Select All the Technologies you expertise in *</label><br>
+                <div *ngFor="let arr of experienceForm.get('skills')['controls']; let i= index">
+                    <label class="checkbox">
+                        <input type="checkbox" [formControlName]="i">
+                        {{skill[i]}}
+                    </label>
+                </div>
+                
+            </div>
+            <div class="input-field">
+                <label for="">If Others Please Mention</label>
+                <input type="text" formControlName="other_skills">
+            </div>
+            <div class="input-field-mixin" formGroupName="familiar_skills">
+                <label for="">Select All the Technologies you are familiar in *</label><br>
+                <div *ngFor="let arr of experienceForm.get('familiar_skills')['controls']; let i= index">
+                    <label class="checkbox">
+                        <input type="checkbox" [formControlName]="i">
+                        {{skill[i]}}
+                    </label>
+                </div>
+            </div>
+            <div class="input-field">
+                <label for="">If Others Please Mention</label>
+                <input type="text" formControlName="other_familiar_skills">
+            </div>
+            <div class="input-field-mixin" >
+                <label for="">Are you currently on Notice Period?*</label><br>
+                <div *ngFor="let i of notice">
+                    <label class="radio">
+                        <input type="radio" [value]="i" formControlName="onNoticePeriod">
+                        {{i}}
+                    </label>
+                </div>
+            </div>
+            <div class="block1">
+                <div class="input-field-1">
+                    <label for="">If Yes, when will your notice period end?*</label>
+                    <input type="text" formControlName="noticePeriodEnd">
+                </div>
+                <div class="input-field-1">
+                    <label for="">How long is your notice period?* (Mention in months)</label>
+                    <input type="text" formControlName="noticePeriod">
+                </div>
+            </div>
+            <div class="block1">
+                <div class="input-field-mixin">
+                    <label for="">Have You Appeared For Any Test By Zeus in the past 12 months?*</label><br>
+                    <div *ngFor="let i of test">
+                        <label class="radio">
+                            <input type="radio" [value]="i" formControlName="appeared_test">
+                            {{i}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="block1">
+                <div class="input-field-1">
+                    <label for="">If Yes, which role did you apply for?</label>
+                    <input type="text" formControlName="applied_for">
+                </div>
+            </div>
+        
+            <button type="submit" class="next-btn">Next</button>
+            <h3 *ngIf="!experienceForm.valid && experienceForm.touched">Please enter valid data!</h3>
+
+        </form>
+    </div>

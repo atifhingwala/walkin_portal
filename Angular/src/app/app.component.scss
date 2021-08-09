@@ -1,0 +1,34 @@
+
+
+nav{
+    background-color: #1F2834;
+    // sticky navbar
+    position: fixed;
+    top: 0;
+    left:0;
+    height: 57px;
+    width: 100%;
+}
+
+.logo{
+    width: 121px;
+    height: 36px;
+    margin: 10px 15px;
+}
+
+.navbar-icon{
+    float: right;
+    margin: 7px 16px;
+    border: 2px solid #3FD28B;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #3C4E62;
+    p{
+        color: #FFFFFF;
+        text-align: center;
+        margin: 0px;
+        margin-top: 10px;
+        
+    }
+}

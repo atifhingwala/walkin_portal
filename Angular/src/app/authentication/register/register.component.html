@@ -1,0 +1,40 @@
+<div class="create-account">
+    
+    <p>Create An Account</p>
+    <ul>
+        <li><button type="button" class="btn">CANCEL</button></li>
+        <li><button type="button" class="btn" (click)="onCreate()" >CREATE</button></li>
+        
+    </ul>
+    <div class="back"><img routerLink="/login" src="../../assets/icons_new/arrow-left-solid.svg" alt=""></div>
+</div>
+
+<div class="tabs" >
+        <div class="information">
+            <div>
+                <a routerLink="personal" >                
+                    <div class="number" [routerLinkActive]="['active']">
+                        <p>1</p>
+                    </div>              
+                    <p>Personal Information</p>
+                </a>
+            </div>
+            <div>
+                <a routerLink="qualification">
+                    <div class="number" [routerLinkActive]="['active']">
+                        <p>2</p>
+                    </div>
+                    <p>Qualification</p>
+                </a>
+            </div>
+            <div>
+                <a routerLink="review">
+                    <div class="number" [routerLinkActive]="['active']">
+                        <p>3</p>
+                    </div>
+                    <p>Review and Proceed</p>
+                </a>
+            </div>
+        </div>
+</div>
+<router-outlet></router-outlet>

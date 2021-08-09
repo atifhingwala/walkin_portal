@@ -1,0 +1,31 @@
+<div class="cards-container" *ngFor="let e of events.table; let i=index"> 
+    
+    <div class="card">
+        <div class="card-text">
+            <p>{{events.table[i].walkin_name}}</p>
+        </div>
+        <div class="date-time">
+            <p>Date & Time:</p>
+            <span class="date">{{events.table1[i].date}}</span>
+            <span class="separator">|</span>
+            <span class="location"><img src="../../assets/icons/Location icon.svg" alt="location-icon">
+                {{events.table2[i].walkin_city}}
+            </span>
+        </div>
+        <hr>
+        <div class="job-roles">
+            <p>Job Roles:</p>
+            <div class="flexbox">
+                <ng-container *ngFor="let p of events.table3; let q=index">
+                    <div  class="roles" *ngIf="events.table3[q].walkin_id==i+1">
+                            <div class="job-role-img" ><img src="{{events.table3[q].role_img_src}}" alt=""></div>
+                            <div class="job-role-text" >{{events.table3[q].role_name}}</div>
+                            <span class="separator">|</span>
+                        
+                    </div>
+                </ng-container>
+            </div>
+        </div> 
+        <div class="button-detail" [routerLink]="['/events', events.table[i].walkin_id]"><button >VIEW MORE DETAILS</button></div>
+    </div>
+</div>

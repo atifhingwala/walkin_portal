@@ -1,0 +1,112 @@
+@import "../events/event/event.component.scss";
+@import "../variables.scss";
+
+.card{
+    
+    
+    .success-icon{
+        width:100px;
+        height: 100px;
+        border-radius: 50%;
+        // border: solid 2px red;
+        margin: 0 auto;
+        margin-top: -70px;
+        background-color: #18BE2E;
+        background-image: url(../../assets/icons_new/check_white_24dp.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80px;
+
+    }
+
+
+    // width: 976px;
+    display: block;
+    margin: 133px auto;
+    padding: 16px;
+
+    @media screen and (min-width: 1050px){
+        width: 960px;
+        // height: fit-content;
+        
+        
+    }
+
+
+    @media screen and (max-width: 400px){
+        width: 320px;
+        
+    }
+
+    .space-element{
+        margin-bottom: 20px;
+    }
+    
+    .title{
+        color: #222222;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+    .walkin-info{
+        p:first-child{
+            color: #666666;
+            font-size: 14px;
+            margin-bottom: 0px;
+        }
+        p:not(:first-child){
+            font-weight: bold;
+            font-size: 16px;
+            margin: 8px 0px;
+        }
+    }
+    .venue{
+        p:first-child{
+            color: #666666;
+            font-size: 14px;
+            margin-bottom: 0px;
+        }
+        p:not(:first-child){
+            font-weight: bold;
+            font-size: 16px;
+            margin: 8px 0px;
+            display: block;
+            line-height: 25px;
+        }
+    }
+    .things-to-remember{
+        p:first-child{
+            color: #666666;
+            font-size: 14px;
+            margin-bottom: 0px;
+        }
+        p:not(:first-child){
+            font-weight: bold;
+            font-size: 16px;
+            margin: 8px 0px;
+            display: block;
+            line-height: 25px;
+        }
+    }
+    .button{
+        // padding: 24px;
+        // border: solid 2px red;
+        
+        .hall-ticket-btn{
+            display: block;
+            margin: 24px auto 24px;
+            height: 28px;
+            width: 202px;
+            border:none;
+            box-shadow: 0px 3px 5px #0000003D;
+            border-radius: 2px;
+            background-color: $primary-button-color;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+        
+}
